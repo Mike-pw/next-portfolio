@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Head from next/head
 import sanityClient from "../util/client"
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Header from "../components/Header"
@@ -29,7 +30,6 @@ const theme = extendTheme({
   },
 })
 
-
 function MyApp({ Component, pageProps }) {
   
   const [posts, setPosts] = useState(null)
@@ -47,6 +47,22 @@ function MyApp({ Component, pageProps }) {
 
   return (
   <ChakraProvider theme={theme}>
+  <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-X0Y72YDJYG', { page_path: window.location.pathname });
+            `,
+          }}
+        />
+      </Head>
     <Header />
     <Component {...pageProps} posts={posts} />
   </ChakraProvider>
