@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
-import '../styles/globals.css'
-import '../styles/blogPost.css'
 import sanityClient from "../util/client"
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Header from "../components/Header"
+import '../styles/globals.css'
+import '../styles/blogPost.css'
+import '../styles/prism-theme.css'
+import '@fontsource/pathway-gothic-one/400.css'
 
-//focus outline required for a11y
+//focus outline for a11y
 const focusShadow = '0 0 0 2px rgba(125,125,125,.75)'
 
 const theme = extendTheme({

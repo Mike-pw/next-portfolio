@@ -5,12 +5,11 @@ import {
     Text,
     Stack,
     Button,
-    Badge,
     Flex,
     useColorModeValue,
     keyframes,
 } from '@chakra-ui/react';
-
+import Link from 'next/link'
 const fade = keyframes`
   from {opacity: 0;}
   to {opacity: 1}
@@ -70,32 +69,28 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                     ))}
                 </Flex>
                 <Stack mt={8} direction={'row'} spacing={4}>
-                    <Button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            window.location.href = data.link;
-                        }}
-                        flex={1}
-                        fontSize={'sm'}
-                        rounded={'md'}>
-                        View
-                    </Button>
-                    <Button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            window.location.href = data.github;
-                        }}
-                        flex={1}
-                        fontSize={'sm'}
-                        rounded={'md'}
-                        bg={'red.500'}
-                        color={'white'}
+                    <Link href={data.link} passHref={true}>
+                        <Button
+                            flex={1}
+                            fontSize={'sm'}
+                            rounded={'md'}>
+                            View
+                        </Button>
+                    </Link>
+                    <Link href={data.github} passHref={true}>
+                        <Button
+                            flex={1}
+                            fontSize={'sm'}
+                            rounded={'md'}
+                            bg={'red.500'}
+                            color={'white'}
 
-                        _hover={{
-                            bg: 'red.600',
-                        }}>
-                        Repo
-                    </Button>
+                            _hover={{
+                                bg: 'red.600',
+                            }}>
+                            Repo
+                        </Button>
+                    </Link>
                 </Stack>
             </Box>
         </Center>

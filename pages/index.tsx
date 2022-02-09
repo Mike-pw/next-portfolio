@@ -19,8 +19,8 @@ export default function About() {
         align={'center'}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
-        direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        direction={{ base: 'column', xl: 'row' }}>
+        <Stack flex={1} spacing={{ base: 5, md: 10 }} width='full'>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -48,7 +48,7 @@ export default function About() {
               Web Developer
             </Text>
           </Heading>
-          <Text fontSize='2xl' color={'gray.500'} width="600px">
+          <Text fontSize='2xl' color={'gray.500'} width={{ base: 'full', lg: '600px' }}>
             I make websites using React with Next.js, and I&apos;ve worked for small businesses as a freelancer.
           </Text>
           <Stack

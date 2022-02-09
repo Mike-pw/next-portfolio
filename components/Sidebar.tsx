@@ -5,8 +5,6 @@ import {
     Flex,
     useColorModeValue,
     Link,
-    Drawer,
-    DrawerContent,
     Text,
     useDisclosure,
     BoxProps,
@@ -45,26 +43,13 @@ export default function SimpleSidebar({ children, selectFilter, tags }: InitialP
                 display={{ base: 'none', md: 'block' }}
             >
                 <SidebarContent
+                    h="calc(100vh - 80px)"
+                    overflowY='auto'
                     LinkItems={LinkItems}
                     selectFilter={selectFilter}
                     onClose={() => onClose}
                     display={{ base: 'none', md: 'block' }}
                 />
-                <Drawer
-                    autoFocus={false}
-                    isOpen={isOpen}
-                    placement="left"
-                    onClose={onClose}
-                    returnFocusOnClose={false}
-                    onOverlayClick={onClose}
-                    size="full">
-                    <DrawerContent>
-                        <SidebarContent
-                            LinkItems={LinkItems}
-                            selectFilter={selectFilter}
-                            onClose={onClose} />
-                    </DrawerContent>
-                </Drawer>
             </Box>
         </Fade>
     );

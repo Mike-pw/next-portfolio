@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
-//import ReactMarkdown from 'react-markdown'
-//import SyntaxHighlight from '../../components/SyntaxHighlight'
+import ReactMarkdown from 'react-markdown'
+import Prism from 'prismjs'
+import React, { ReactNode } from 'react';
+import {
+    Fade
+} from '@chakra-ui/react';
+
+require('prismjs/components/prism-javascript')
+require('prismjs/components/prism-css')
+require('prismjs/components/prism-jsx')
+require('prismjs/components/prism-markup')
 
 export default function Post() {
     const router = useRouter()
@@ -41,17 +50,24 @@ export default function Post() {
             .catch(console.error)
     }, [slug])
 
+    useEffect(() => {
+        Prism.highlightAll()
+      })
+
     if (!singlePost) return null
-     console.log(singlePost)
+
     return (
         <main>
-            <section className="post">
+            <section>
+            <Fade in={true}>
                 <article className="blog-post-article">
-                    <h2>{singlePost.title}</h2>
-
-                                                {singlePost.contentMarkdown}
-
+                    <h2 className="postTitle">{singlePost.title}</h2>
+                    <ReactMarkdown
+                        className="language-markup">
+                            {singlePost.contentMarkdown}
+                        </ReactMarkdown>
                 </article>
+            </Fade>
             </section>
         </main>
     )

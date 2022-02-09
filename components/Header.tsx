@@ -38,15 +38,9 @@ export default function Header() {
           h={20}
           alignItems={'center'}
           justifyContent={'space-between'}
-          px="24"
+          px={{ base: '6', md: '12', lg: '24' }}
           maxWidth={'full'}
           margin={'auto'}>
-          <NextLink passHref={true} href="/">
-            <Link>
-              <Heading>Mike Melgren</Heading>
-            </Link>
-          </NextLink>
-          <Spacer />
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
@@ -65,9 +59,15 @@ export default function Header() {
             <DesktopNav />
           </Flex>
           <Spacer />
-
+          <NextLink passHref={true} href="/">
+            <Link px='3'>
+              <Heading fontFamily={'Pathway Gothic One'} as='h1' fontSize='3xl'>melgren.dev</Heading>
+            </Link>
+          </NextLink>
+          <Spacer />
+          <Spacer />
           <Flex
-            w="300px"
+            w={{ base: "200px", md: "300px" }}
             justify="space-around"
             align="center">
             <SocialIcon
@@ -106,7 +106,7 @@ const DesktopNav = () => {
   const linkHoverColor = useColorModeValue('gray.800', 'white');
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <NextLink

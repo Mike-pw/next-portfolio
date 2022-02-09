@@ -15,6 +15,9 @@ export default function AllPosts({posts }) {
     const [tagFilter, setTagFilter] = useState("")
 
     function selectFilter(tagName) {
+        if (tagFilter == tagName) {
+          setTagFilter(null)
+        } else
         setTagFilter(tagName)
         }
       
