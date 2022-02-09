@@ -1,0 +1,16 @@
+.blog-post-article {
+  width: 720px;
+  padding-top: 90px;
+  margin: auto;
+}
+
+code {
+  background-color:rgb(47, 47, 47);
+  color: white;
+  padding: 0px 4px 2px 4px;
+  border-radius: 5px;
+}
+
+.tag {
+  display:inline;
+}
