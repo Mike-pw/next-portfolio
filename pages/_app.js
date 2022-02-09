@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Head from next/head
+import Head from 'next/head'
 import sanityClient from "../util/client"
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Header from "../components/Header"
