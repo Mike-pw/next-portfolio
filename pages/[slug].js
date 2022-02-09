@@ -25,6 +25,7 @@ export default function AllPosts({posts }) {
 
     useEffect(() => {
     setTags(getTags(posts, page))
+    selectFilter('')
     },[page])
 
     if (!tags) return null
