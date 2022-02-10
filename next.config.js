@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  trailingSlash: false,
+  trailingSlash: true,
 }
