@@ -143,3 +143,13 @@ export async function getAllPosts() {
     }`)
     return projects
   }  
+
+  export async function getStaticPaths() {
+    return {
+      paths: [
+        { params: { slug: "projects" } },
+        { params: { slug: "blog" } }
+      ],
+      fallback: true // false or 'blocking'
+    };
+  }
