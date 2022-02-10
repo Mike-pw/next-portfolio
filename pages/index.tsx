@@ -14,7 +14,7 @@ import {
 
 export default function About() {
   return (
-    <Container maxW={'7xl'} py="24">
+    <Container maxW={'7xl'} py={{ base: "12", lg: "24" }}>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -83,8 +83,8 @@ export default function About() {
               alt={'Hero Image'}
               fit={'cover'}
               align={'center'}
-              w={'100%'}
-              h={'100%'}
+              w={'500'}
+              h={'400'}
               src={
                 '/mike.jpg'
               }

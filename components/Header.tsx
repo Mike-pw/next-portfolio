@@ -25,7 +25,6 @@ import NextLink from 'next/link';
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <>
       <Box
@@ -67,34 +66,34 @@ export default function Header() {
           <Spacer />
           <Spacer />
           <Flex
-            w={{ base: "200px", md: "300px" }}
+            w="200px"
             justify="space-around"
             align="center">
+            <Button width="40px" onClick={toggleColorMode} size={'md'} rounded="full">
+              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Button>
             <SocialIcon
               url="https://github.com/MikeMelgren"
               className="social-icon"
               fgColor="#fff"
-              style={{ height: 44, width: 44 }}
+              style={{ height: 40, width: 40 }}
             />
             <SocialIcon
               url="https://discordapp.com/users/895421310828695563"
               className="social-icon"
               fgColor="#fff"
-              style={{ height: 44, width: 44 }}
+              style={{ height: 40, width: 40 }}
             />
             <SocialIcon
               url="https://www.reddit.com/user/mikemelgren"
               className="social-icon"
               fgColor="#fff"
-              style={{ height: 44, width: 44 }}
+              style={{ height: 40, width: 40 }}
             />
-            <Button width="48px" onClick={toggleColorMode} size={'lg'} rounded="full">
-              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            </Button>
           </Flex>
         </Flex>
         <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
+          <MobileNav onToggle={onToggle} />
         </Collapse>
       </Box>
     </>
@@ -110,7 +109,7 @@ const DesktopNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <NextLink
-            href={navItem.href ?? '#'}
+            href={navItem.href}
             passHref={true}
           >
             <Link
@@ -135,47 +134,54 @@ const DesktopNav = () => {
   );
 };
 
-const MobileNav = () => {
+interface MobileNav {
+  onToggle: () => void;
+}
+
+const MobileNav = ({ onToggle }: MobileNav) => {
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem onToggle={onToggle} key={navItem.label} {...navItem} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
+interface MobileNavItem {
+  label: string;
+  href?: string;
+  onToggle: () => void;
+}
+
+const MobileNavItem = ({ label, href, onToggle }: MobileNavItem) => {
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? '#'}
-        justify={'space-between'}
-        align={'center'}
-        _hover={{
-          textDecoration: 'none',
-        }}>
-        <Text
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}>
-          {label}
-        </Text>
-      </Flex>
+    <Stack spacing={4} onClick={() => onToggle()}>
+      <NextLink href={href} passHref={true}>
+        <Link
+          py={2}
+          justify={'space-between'}
+          align={'left'}
+          _hover={{
+            textDecoration: 'none',
+          }}>
+          <Text
+            fontWeight={600}
+            color={useColorModeValue('gray.600', 'gray.200')}>
+            {label}
+          </Text>
+        </Link>
+      </NextLink>
     </Stack>
   );
 };
 
 interface NavItem {
   label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
   href?: string;
 }
 
