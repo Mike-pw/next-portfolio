@@ -48,7 +48,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
   <ChakraProvider theme={theme}>
-  <Head>
   <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG"
         strategy="afterInteractive"
@@ -62,7 +61,6 @@ function MyApp({ Component, pageProps }) {
           gtag('config', 'G-X0Y72YDJYG');
         `}
       </Script>
-      </Head>
     <Header />
     <Component {...pageProps} posts={posts} />
   </ChakraProvider>
