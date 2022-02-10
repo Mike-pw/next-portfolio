@@ -6,10 +6,8 @@ class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
         <title>Portfolio of Mike Melgren</title>
-        <meta name="description">Portfolio of Mike Melgren, Web Developer from Canada</meta>
+        <meta name="description" content="Portfolio of Mike Melgren, Web Developer from Canada" />
         <meta charset="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="Portfolio site of Mike Melgren" />
         <meta name="msapplication-TileColor" content="#da532c" />
@@ -25,7 +23,8 @@ class MyDocument extends Document {
         <meta name="twitter:title" content="melgren.dev" />
         <meta name="twitter:description" content="Portfolio site of Mike Melgren" />
         <meta name="twitter:image" content="https://melgren.dev/thumbnail.jpg" />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         </Head>
         <body>
           <Main />
