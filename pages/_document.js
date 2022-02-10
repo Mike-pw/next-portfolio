@@ -5,6 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
+        <title>Portfolio of Mike Melgren</title>
+        <meta name="description">Portfolio of Mike Melgren, Web Developer from Canada</meta>
         </Head>
         <body>
           <Main />

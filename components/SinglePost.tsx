@@ -51,6 +51,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                 <Flex wrap="wrap" width="272px" align={'center'} justify={'center'} mt={6}>
                     {data.tags && data.tags.map((tag, index) => (
                         <Button
+                            name="tag"
                             key={index}
                             size="xs"
                             px={2}
@@ -71,6 +72,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                 <Stack mt={8} direction={'row'} spacing={4}>
                     <Link href={data.link} passHref={true}>
                         <Button
+                            name="view"
                             flex={1}
                             fontSize={'sm'}
                             rounded={'md'}>
@@ -79,6 +81,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                     </Link>
                     <Link href={data.github} passHref={true}>
                         <Button
+                            name="repo"
                             flex={1}
                             fontSize={'sm'}
                             rounded={'md'}

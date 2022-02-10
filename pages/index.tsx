@@ -14,7 +14,7 @@ import {
 
 export default function About() {
   return (
-    <Container maxW={'7xl'} py={{ base: "12", lg: "24" }}>
+    <Container maxW={'7xl'} py={{ base: "6", lg: "24" }}>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}

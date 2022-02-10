@@ -69,7 +69,7 @@ export default function Header() {
             w="200px"
             justify="space-around"
             align="center">
-            <Button width="40px" onClick={toggleColorMode} size={'md'} rounded="full">
+            <Button name="color-mode" width="40px" onClick={toggleColorMode} size={'md'} rounded="full">
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
             <SocialIcon
