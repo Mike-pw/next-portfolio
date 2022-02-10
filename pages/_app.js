@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import Script from 'next.script'
 import sanityClient from "../util/client"
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Header from "../components/Header"
@@ -48,19 +46,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
   <ChakraProvider theme={theme}>
-  <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-X0Y72YDJYG');
-        `}
-      </Script>
     <Header />
     <Component {...pageProps} posts={posts} />
   </ChakraProvider>
