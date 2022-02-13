@@ -27,6 +27,10 @@ article > div > p {
 	font-weight: 400;
 }
 
+p > a {
+	color: #E53E3E;
+  }
+
 article > div > ul {
   margin-left: 48px;
 }
