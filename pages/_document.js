@@ -5,6 +5,24 @@ class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
+            {/* Global Site Tag (gtag.js) - Google Analytics */}
+            <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X0Y72YDJYG', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
+
         <title>Portfolio of Mike Melgren</title>
         <meta name="description" content="Portfolio of Mike Melgren, Web Developer from Canada" />
         <meta charset="utf-8" />
@@ -29,18 +47,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            src="https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG"
-            />
-            <script id="google-analytics">
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-             gtag('config', 'G-X0Y72YDJYG');
-            `}
-            </script>
         </body>
       </Html>
     );
