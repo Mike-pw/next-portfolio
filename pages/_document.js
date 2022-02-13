@@ -30,9 +30,8 @@ class MyDocument extends Document {
           <Main />
           <NextScript
             src="https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG"
-            strategy="afterInteractive"
             />
-            <NextScript id="google-analytics" strategy="afterInteractive">
+            <NextScript id="google-analytics">
             {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
