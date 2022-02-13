@@ -5,7 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
-            {/* Global Site Tag (gtag.js) - Google Analytics */}
             <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=G-X0Y72YDJYG`}
