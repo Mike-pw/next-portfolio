@@ -7,10 +7,7 @@ import {
     Fade
 } from '@chakra-ui/react';
 
-require('prismjs/components/prism-javascript')
-require('prismjs/components/prism-css')
 require('prismjs/components/prism-jsx')
-require('prismjs/components/prism-markup')
 
 export default function Post() {
     const router = useRouter()
@@ -63,7 +60,7 @@ export default function Post() {
                 <article className="blog-post-article">
                     <h2 className="postTitle">{singlePost.title}</h2>
                     <ReactMarkdown
-                        className="language-markup">
+                        className="language-jsx">
                             {singlePost.contentMarkdown}
                         </ReactMarkdown>
                 </article>

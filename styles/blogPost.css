@@ -28,7 +28,7 @@ article > div > p {
 }
 
 p > a {
-	color: #E53E3E;
+	text-decoration: underline;
   }
 
 article > div > ul {
