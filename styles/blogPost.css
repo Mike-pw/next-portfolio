@@ -10,12 +10,12 @@ code {
   border-radius: 5px;
 }
 
-article > h2, article > h3 {
+article > h2 {
 	font-size: 48px;
 	padding-top: 48px;
 }
 
- div.language-markup > h3 {
+ div.language-jsx > h3 {
 	font-size: 30px;
 	padding-top: 36px;
 }
