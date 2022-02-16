@@ -49,7 +49,7 @@ export default function About() {
             </Text>
           </Heading>
           <Text fontSize='2xl' color={'gray.500'} width={{ base: 'full', lg: '600px' }}>
-            I work on the web using React and related tech. My focus is on functionality and solving problems with code.
+            I work on the web using React and related tech. My focus is on functionality and solving problems.
           </Text>
         </Stack>
         <Flex
