@@ -49,12 +49,8 @@ export default function About() {
             </Text>
           </Heading>
           <Text fontSize='2xl' color={'gray.500'} width={{ base: 'full', lg: '600px' }}>
-            I make websites using React with Next.js, and I&apos;ve worked for small businesses as a freelancer.
+            I work on the web using React and related tech. My focus is on functionality and solving problems with code.
           </Text>
-          <Stack
-            spacing={{ base: 4, sm: 6 }}
-            direction={{ base: 'column', sm: 'row' }}>
-          </Stack>
         </Stack>
         <Flex
           flex={1}
@@ -74,7 +70,7 @@ export default function About() {
           <Box
             position={'relative'}
             bgPosition='bottom'
-            height={'360px'}
+            height={'400px'}
             rounded={'2xl'}
             boxShadow={'2xl'}
             width={'500px'}
