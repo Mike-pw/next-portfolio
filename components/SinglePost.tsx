@@ -35,7 +35,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                     {data.title}
                 </Heading>
 
-                <Flex wrap="wrap" width="272px" align={'center'} justify={'center'} mt={6}>
+                <Flex wrap="wrap" width="272px" align={'center'} justify={'center'} mt={6} mb={6}>
                     {data.tags && data.tags.map((tag, index) => (
                         <Button
                             name="tag"
