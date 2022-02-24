@@ -38,7 +38,8 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                 <Text
                     textAlign={'left'}
                     color={useColorModeValue('gray.700', 'gray.400')}
-                    px={3}>
+                    px={3}
+                    mt={6}>
                     {truncate(data.brief, 20)}
                 </Text>
 
