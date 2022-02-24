@@ -35,6 +35,13 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                     {data.title}
                 </Heading>
 
+                <Text
+                    textAlign={'left'}
+                    color={useColorModeValue('gray.700', 'gray.400')}
+                    px={3}>
+                    {truncate(data.brief, 20)}
+                </Text>
+
                 <Flex wrap="wrap" width="272px" align={'center'} justify={'center'} mt={6} mb={6}>
                     {data.tags && data.tags.map((tag, index) => (
                         <Button
@@ -56,13 +63,6 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                         </Button>
                     ))}
                 </Flex>
-
-                <Text
-                    textAlign={'left'}
-                    color={useColorModeValue('gray.700', 'gray.400')}
-                    px={3}>
-                    {truncate(data.brief, 20)}
-                </Text>
 
                 <Stack mt={8} direction={'row'} spacing={4}>
                     <Link href={data.link} passHref={true}>
