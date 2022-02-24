@@ -31,8 +31,9 @@ p > a {
 	text-decoration: underline;
   }
 
-article > div > ul {
+article > div > ul, article > div > ol {
   margin-left: 48px;
+  padding-top: 12px;
 }
 
 li {
