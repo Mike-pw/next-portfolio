@@ -34,19 +34,6 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                 <Heading fontSize={'2xl'} fontFamily={'body'}>
                     {data.title}
                 </Heading>
-                {data.cuid ?
-                    <Text fontWeight={600} color={'gray.500'} mb={4}>
-                        Blog
-                    </Text> :
-                    <Text fontWeight={600} color={'gray.500'} mb={4}>
-                        Project
-                    </Text>}
-                <Text
-                    textAlign={'left'}
-                    color={useColorModeValue('gray.700', 'gray.400')}
-                    px={3}>
-                    {truncate(data.brief, 20)}
-                </Text>
 
                 <Flex wrap="wrap" width="272px" align={'center'} justify={'center'} mt={6}>
                     {data.tags && data.tags.map((tag, index) => (
@@ -69,6 +56,14 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                         </Button>
                     ))}
                 </Flex>
+
+                <Text
+                    textAlign={'left'}
+                    color={useColorModeValue('gray.700', 'gray.400')}
+                    px={3}>
+                    {truncate(data.brief, 20)}
+                </Text>
+
                 <Stack mt={8} direction={'row'} spacing={4}>
                     <Link href={data.link} passHref={true}>
                         <Button
