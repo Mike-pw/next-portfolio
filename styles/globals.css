@@ -16,3 +16,8 @@ a {
 * {
   box-sizing: border-box;
 }
+ .active {
+   background: #E53E3E;
+   color: white !important;
+   text-decoration: underline;
+ }

@@ -21,10 +21,12 @@ import {
 } from '@chakra-ui/icons';
 import { SocialIcon } from "react-social-icons";
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
   return (
     <>
       <Box
@@ -55,7 +57,7 @@ export default function Header() {
             />
           </Flex>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
+            <DesktopNav router={router} />
           </Flex>
           <Spacer />
           <NextLink passHref={true} href="/">
@@ -100,10 +102,10 @@ export default function Header() {
   );
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({ router }) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
-
+  console.log(router.query)
   return (
     <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => (
@@ -125,11 +127,7 @@ const DesktopNav = () => {
                 color: 'white',
                 textDecoration: 'none',
               }}
-              _active={{
-                bg: 'red.500',
-                color: 'white',
-                textDecoration: 'none',
-              }}>
+              className={(navItem.href.includes(router.query.slug) || ((navItem.href == "/") && (!router.query.slug))) ? "active" : ""}>
               {navItem.label}
             </Link>
           </NextLink>
