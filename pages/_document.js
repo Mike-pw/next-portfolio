@@ -23,7 +23,7 @@ class MyDocument extends Document {
           />
 
         <title>melgren.dev</title>
-        <meta name="description" content="Portfolio of Mike Melgren, Web Developer from Canada" />
+        <meta name="description" content="Web Developer from Canada" />
         <meta charset="utf-8" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="Portfolio site of Mike Melgren" />
