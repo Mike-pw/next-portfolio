@@ -124,6 +124,11 @@ const DesktopNav = () => {
                 bg: 'red.500',
                 color: 'white',
                 textDecoration: 'none',
+              }}
+              _active={{
+                bg: 'red.500',
+                color: 'white',
+                textDecoration: 'none',
               }}>
               {navItem.label}
             </Link>
