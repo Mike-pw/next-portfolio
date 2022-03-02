@@ -58,7 +58,8 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                             bg={activeTagBg(tag, tagFilter)}
                             color={activeTagColor(tag, tagFilter)}
                             _hover={{
-                                bg: activeTagBg(tag, tagFilter),
+                                bg: 'red.600',
+                                color: 'white'
                             }}
                         >
                             {tag}

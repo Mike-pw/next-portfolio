@@ -79,6 +79,8 @@ const SidebarContent = ({ LinkItems, selectFilter, onClose, ...rest }: SidebarPr
             {LinkItems.map((tag) => (
                 <NavItem
                     key={tag.name}
+                    tagName={tag.name}
+                    selectFilter={selectFilter}
                     onClick={() => selectFilter(tag.name)}>
                     {tag.name}
                 </NavItem>
@@ -89,20 +91,21 @@ const SidebarContent = ({ LinkItems, selectFilter, onClose, ...rest }: SidebarPr
 
 interface NavItemProps extends FlexProps {
     children: ReactText;
+    selectFilter: (tagName: string) => void;
+    tagName: string;
 }
 
-const NavItem = ({ children, ...rest }: NavItemProps) => {
+const NavItem = ({ children, selectFilter, tagName, ...rest }: NavItemProps) => {
     return (
         <Button
             color={useColorModeValue('gray.600', 'gray.200')}
             bg={useColorModeValue('gray.100', 'gray.900')}
             width="100%"
             size="lg"
-            align="left"
             mt="1"
+            justifyContent="left"
             borderRadius="lg"
-            role="group"
-            cursor="pointer"
+            onClick={() => selectFilter(tagName)}
             _hover={{
                 bg: 'red.500',
                 color: 'white',
