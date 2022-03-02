@@ -108,9 +108,6 @@ export default function Header() {
 
 const DesktopNav = ({ router }) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-  console.log(router.asPath.slice(0, -1))
-  console.log(NAV_ITEMS)
-
   return (
     <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => (
