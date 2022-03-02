@@ -1,11 +1,9 @@
 import React, { ReactNode } from 'react';
 import {
     Box,
-    CloseButton,
     Flex,
     useColorModeValue,
     Text,
-    useDisclosure,
     BoxProps,
     FlexProps,
     Fade,
@@ -20,18 +18,17 @@ interface LinkItemProps {
 interface InitialProps {
     children: ReactNode;
     selectFilter: (tagName: string) => void;
+    tagFilter: string;
     tags: Array<string>;
 }
 
-export default function SimpleSidebar({ children, selectFilter, tags }: InitialProps) {
+export default function SimpleSidebar({ selectFilter, tags, tagFilter }: InitialProps) {
 
     const LinkItems: Array<LinkItemProps> = [];
     tags.forEach(tag => {
         const obj = { name: tag }
         LinkItems.push(obj)
     })
-
-    const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <Fade in={true}>
@@ -47,7 +44,7 @@ export default function SimpleSidebar({ children, selectFilter, tags }: InitialP
                     overflowY='auto'
                     LinkItems={LinkItems}
                     selectFilter={selectFilter}
-                    onClose={() => onClose}
+                    tagFilter={tagFilter}
                     display={{ base: 'none', md: 'block' }}
                 />
             </Box>
@@ -56,12 +53,12 @@ export default function SimpleSidebar({ children, selectFilter, tags }: InitialP
 }
 
 interface SidebarProps extends BoxProps {
-    onClose: () => void;
     selectFilter: (tagName: string) => void;
     LinkItems: Array<LinkItemProps>;
+    tagFilter: string;
 }
 
-const SidebarContent = ({ LinkItems, selectFilter, onClose, ...rest }: SidebarProps) => {
+const SidebarContent = ({ LinkItems, selectFilter, tagFilter, ...rest }: SidebarProps) => {
     return (
         <Box
             bg={useColorModeValue('gray.100', 'gray.900')}
@@ -74,13 +71,13 @@ const SidebarContent = ({ LinkItems, selectFilter, onClose, ...rest }: SidebarPr
                 <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
                     Tech
                 </Text>
-                <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
             {LinkItems.map((tag) => (
                 <NavItem
                     key={tag.name}
                     tagName={tag.name}
                     selectFilter={selectFilter}
+                    tagFilter={tagFilter}
                     onClick={() => selectFilter(tag.name)}>
                     {tag.name}
                 </NavItem>
@@ -93,9 +90,10 @@ interface NavItemProps extends FlexProps {
     children: ReactText;
     selectFilter: (tagName: string) => void;
     tagName: string;
+    tagFilter: string;
 }
 
-const NavItem = ({ children, selectFilter, tagName, ...rest }: NavItemProps) => {
+const NavItem = ({ children, selectFilter, tagFilter, tagName }: NavItemProps) => {
     return (
         <Button
             color={useColorModeValue('gray.600', 'gray.200')}
@@ -106,6 +104,7 @@ const NavItem = ({ children, selectFilter, tagName, ...rest }: NavItemProps) => 
             justifyContent="left"
             borderRadius="lg"
             onClick={() => selectFilter(tagName)}
+            className={tagFilter === tagName ? "active" : ""}
             _hover={{
                 bg: 'red.500',
                 color: 'white',

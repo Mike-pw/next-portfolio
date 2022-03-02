@@ -17,9 +17,9 @@ a {
   box-sizing: border-box;
 }
  .active {
-   background: #E53E3E;
+   background: #E53E3E !important;
    color: white !important;
-   text-decoration: underline;
+   text-decoration: none;
  }
 
  a.social-icon {
@@ -27,5 +27,6 @@ a {
  }
 
  a.social-icon:focus {
-  outline-color: gray !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(125,125,125,.75);
 }

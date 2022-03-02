@@ -55,8 +55,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                             my={1}
                             fontWeight={'400'}
                             onClick={() => selectFilter(tag)}
-                            bg={activeTagBg(tag, tagFilter)}
-                            color={activeTagColor(tag, tagFilter)}
+                            className={tag === tagFilter ? "active" : ""}
                             _hover={{
                                 bg: 'red.600',
                                 color: 'white'
@@ -85,7 +84,6 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                             rounded={'md'}
                             bg={'red.500'}
                             color={'white'}
-
                             _hover={{
                                 bg: 'red.600',
                             }}>
@@ -104,17 +102,5 @@ function truncate(str, maxWords) {
         return newString + "...";
     } else {
         return newString
-    }
-}
-
-function activeTagBg(tag, tagFilter) {
-    if (tag == tagFilter) {
-        return 'red.600'
-    }
-}
-
-function activeTagColor(tag, tagFilter) {
-    if (tag == tagFilter) {
-        return 'white'
     }
 }

@@ -34,7 +34,7 @@ export default function AllPosts({ posts }) {
   return (
     <Flex>
       <Slide in={true} direction='left'>
-          <Sidebar page={page} tags={tags} selectFilter={selectFilter} />
+          <Sidebar page={page} tags={tags} selectFilter={selectFilter} tagFilter={tagFilter} />
       </Slide>
     <Posts page={page} posts={posts} tagFilter={tagFilter} selectFilter={selectFilter} />
     </Flex>
