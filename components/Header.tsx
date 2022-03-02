@@ -61,8 +61,12 @@ export default function Header() {
           </Flex>
           <Spacer />
           <NextLink passHref={true} href="/">
-            <Link px='3'>
-              <Heading fontFamily={'Pathway Gothic One'} as='h1' fontSize='3xl'>melgren.dev</Heading>
+            <Link py='2' px="4" rounded="lg">
+              <Heading fontFamily={'Pathway Gothic One'}
+                as='h1'
+                fontSize='3xl'>
+                melgren.dev
+              </Heading>
             </Link>
           </NextLink>
           <Spacer />
@@ -104,7 +108,6 @@ export default function Header() {
 
 const DesktopNav = ({ router }) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
 
   return (
     <Stack direction={'row'} spacing={1}>

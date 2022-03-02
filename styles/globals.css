@@ -21,3 +21,11 @@ a {
    color: white !important;
    text-decoration: underline;
  }
+
+ a.social-icon {
+   border-radius: 100% !important;
+ }
+
+ a.social-icon:focus {
+  outline-color: gray !important;
+}
