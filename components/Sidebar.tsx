@@ -4,12 +4,12 @@ import {
     CloseButton,
     Flex,
     useColorModeValue,
-    Link,
     Text,
     useDisclosure,
     BoxProps,
     FlexProps,
-    Fade
+    Fade,
+    Button
 } from '@chakra-ui/react';
 import { ReactText } from 'react';
 
@@ -68,6 +68,7 @@ const SidebarContent = ({ LinkItems, selectFilter, onClose, ...rest }: SidebarPr
             w={{ base: 'full', md: 60 }}
             pos="fixed"
             h="full"
+            p="3"
             {...rest}>
             <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
                 <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
@@ -91,22 +92,19 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ children, ...rest }: NavItemProps) => {
     return (
-        <Link href="#" style={{ textDecoration: 'none' }}>
-            <Flex
-                align="center"
-                px="6"
-                py="3"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                    bg: 'red.500',
-                    color: 'white',
-                }}
-                {...rest}>
-                {children}
-            </Flex>
-        </Link>
+        <Button
+            width="100%"
+            size="lg"
+            align="left"
+            mt="1"
+            borderRadius="lg"
+            role="group"
+            cursor="pointer"
+            _hover={{
+                bg: 'red.500',
+                color: 'white',
+            }}>
+            {children}
+        </Button>
     );
 };
