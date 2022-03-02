@@ -105,7 +105,7 @@ export default function Header() {
 const DesktopNav = ({ router }) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
-  console.log(router.query)
+
   return (
     <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => (

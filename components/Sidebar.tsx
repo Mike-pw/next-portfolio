@@ -90,9 +90,12 @@ const SidebarContent = ({ LinkItems, selectFilter, onClose, ...rest }: SidebarPr
 interface NavItemProps extends FlexProps {
     children: ReactText;
 }
+
 const NavItem = ({ children, ...rest }: NavItemProps) => {
     return (
         <Button
+            color={useColorModeValue('gray.600', 'gray.200')}
+            bg={useColorModeValue('gray.100', 'gray.900')}
             width="100%"
             size="lg"
             align="left"
