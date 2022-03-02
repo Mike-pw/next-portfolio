@@ -57,7 +57,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                             onClick={() => selectFilter(tag)}
                             className={tag === tagFilter ? "active" : ""}
                             _hover={{
-                                bg: 'red.600',
+                                bg: 'red.500',
                                 color: 'white'
                             }}
                         >
