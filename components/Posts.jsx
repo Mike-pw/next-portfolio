@@ -14,7 +14,7 @@ export default function Posts({ posts, page, tagFilter, selectFilter }) {
             //filter based on selected sidebar tag
             (!tagFilter || post.tags.includes(tagFilter)) && 
             //filter whether projects or blog
-            (((page == 'blog') && post.cuid) || ((page == 'projects') && !post.cuid)) &&
+            (((page == 'blog') && post.cuid) || ((page == 'work') && !post.cuid)) &&
             <GridItem 
             key={index} 
             w='320px'
