@@ -54,7 +54,7 @@ export default function AllPosts({ posts }) {
           tags.push(tag)
         }
       })
-    } else if (page == 'work'){
+    } else if (page == 'projects'){
         if(post.cuid) {
             return true
         } else
@@ -72,7 +72,7 @@ export async function getStaticPaths() {
   return {
     paths: [
       { params: { slug: 'blog' } },
-      { params: { slug: 'work' } }
+      { params: { slug: 'projects' } }
     ],
     fallback: false
   };
