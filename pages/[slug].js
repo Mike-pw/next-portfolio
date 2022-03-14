@@ -72,7 +72,7 @@ export async function getStaticPaths() {
   return {
     paths: [
       { params: { slug: 'blog' } },
-      { params: { slug: 'work' } }
+      { params: { slug: 'projects' } }
     ],
     fallback: false
   };
