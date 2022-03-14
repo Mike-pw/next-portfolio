@@ -67,7 +67,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                 </Flex>
 
                 <Stack mt={8} direction={'row'} spacing={4}>
-                    <Link href={data.link} passHref={true}>
+                    <Link href={data.link ? data.link : ""} passHref={true}>
                         <Button
                             name="view"
                             flex={1}
@@ -76,7 +76,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                             View
                         </Button>
                     </Link>
-                    <Link href={data.github} passHref={true}>
+                    <Link href={data.github ? data.github : ""} passHref={true}>
                         <Button
                             name="repo"
                             flex={1}
