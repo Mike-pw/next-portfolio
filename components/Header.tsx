@@ -129,7 +129,6 @@ const DesktopNav = ({ router }) => {
                 color: 'white',
                 textDecoration: 'none',
               }}
-              //className={(navItem.href.includes(router.query.slug) || ((navItem.href === "/") && (!router.query.slug))) ? "active" : ""}>
               className={(router.asPath.slice(0, -1).includes(navItem.href) && navItem.href != '/') || ((navItem.href == '/') && (router.asPath.slice(0, -1) == '')) ? "active" : ""}>
               {navItem.label}
             </Link>
