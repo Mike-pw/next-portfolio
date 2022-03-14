@@ -197,8 +197,8 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/',
   },
   {
-    label: 'Work',
-    href: '/work',
+    label: 'Projects',
+    href: '/projects',
   },
   {
     label: 'Blog',
