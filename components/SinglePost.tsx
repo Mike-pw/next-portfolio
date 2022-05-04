@@ -40,7 +40,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                     color={useColorModeValue('gray.700', 'gray.400')}
                     px={3}
                     mt={6}>
-                    {truncate(data.brief, 20)}
+                    {truncate(data.brief, 110)}
                 </Text>
 
                 <Flex wrap="wrap" width="272px" align={'center'} justify={'center'} mt={6} mb={6}>
@@ -97,8 +97,9 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
     );
 }
 
-function truncate(str, maxWords) {
-    const newString = str.split(" ").splice(0, maxWords).join(" ");
+function truncate(str, maxChars) {
+    console.log(str)
+    const newString = str.slice(0, maxChars);
     if (str.length > newString.length) {
         return newString + "...";
     } else {
