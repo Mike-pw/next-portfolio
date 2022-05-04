@@ -54,6 +54,7 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
                             mx={1}
                             my={1}
                             fontWeight={'400'}
+                            textTransform="capitalize"
                             onClick={() => selectFilter(tag)}
                             className={tag === tagFilter ? "active" : ""}
                             _hover={{

@@ -101,6 +101,7 @@ const NavItem = ({ children, selectFilter, tagFilter, tagName }: NavItemProps) =
             width="100%"
             size="lg"
             mt="1"
+            textTransform="capitalize"
             justifyContent="left"
             borderRadius="lg"
             onClick={() => selectFilter(tagName)}
@@ -110,6 +111,6 @@ const NavItem = ({ children, selectFilter, tagFilter, tagName }: NavItemProps) =
                 color: 'white',
             }}>
             {children}
-        </Button>
+        </Button >
     );
 };
