@@ -5,7 +5,8 @@ import '../styles/blogPost.css'
 import '../styles/prism-theme.css'
 import '@fontsource/pathway-gothic-one/400.css'
 
-//focus outline - a11y
+//focus outline - acessibility
+
 const focusShadow = '0 0 0 2px rgba(125,125,125,.75)'
 
 const theme = extendTheme({
