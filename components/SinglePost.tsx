@@ -98,7 +98,6 @@ export default function SinglePost({ data, selectFilter, tagFilter }) {
 }
 
 function truncate(str, maxChars) {
-    console.log(str)
     const newString = str.slice(0, maxChars);
     if (str.length > newString.length) {
         return newString + "...";
