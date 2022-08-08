@@ -203,8 +203,4 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Blog',
     href: '/blog',
   },
-  {
-    label: 'Resume',
-    href: 'https://techrez.io/resume/mike-melgren',
-  },
 ];
